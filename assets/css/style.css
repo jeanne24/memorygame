@@ -1,0 +1,11 @@
+* {
+}
+
+.form-control {
+	width: 100px;
+	border: 1px solid black;
+}
+
+.btn {
+	background-color: salmon;
+}
