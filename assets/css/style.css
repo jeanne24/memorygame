@@ -1,11 +1,51 @@
-* {
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	/*border: 1px solid black;*/
 }
 
-.form-control {
-	width: 100px;
-	border: 1px solid black;
+h1 {
+	font-family: 'Princess Sofia', cursive;
+	text-align: center;
+	font-size: 80px;
 }
 
-.btn {
-	background-color: salmon;
+h2 {
+	text-align: center;
+}
+.game-outer{
+	/*position: relative;*/
+}
+
+.game {
+	margin: 10px;
+	padding: 10px;
+}
+
+.square {
+	height: 150px;
+	margin: 10px;
+	overflow: hidden;
+	border-radius: 10px;
+	border: 3px solid grey;
+}
+
+.start {
+	width: 97%;
+	height: 83%;
+}
+
+#start {
+	padding: 10px 20px;
+	margin-left: 50%;
+	margin-right: 50%;
+}
+
+img {
+    height: 100%!important;
+    object-fit: cover;
+    width: 200%!important;
+    left: -25px;
+
 }
