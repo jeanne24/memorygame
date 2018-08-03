@@ -40,10 +40,13 @@ const shuffleArray = (array) => {
 
 const displayGame = () => {
 	for(let i=0 ; i<cards.length ; i++){
-		$('.game').append('<div class="square col-2"><img class="card card'+i+'" value="'+cards[i]+'"></img></div>');
-		$('.card'+i).attr({
+		$('.game').append('<div class="square col-2"><div class="card-container"><div class="card" value="'+cards[i]+'"><div class="side"><img class="cards'+i+'"></div><div class="side back"><img class="card'+cards[i]+'"></div></div></div></div>');
+		$('.cards'+i).attr({
 			'src': 'assets/images/back.png'
-		});	
+		});
+		$('.card'+cards[i]).attr({
+			'src': 'assets/images/'+cards[i]+'.png'
+		});
 	}
 }
 
@@ -53,10 +56,7 @@ $(".card").click( function() {
 	// console.log('hey');
 	if(!isAlreadyGuessed($(this).attr("value"))){
 		checkIfMatch();
-
-	$(this).attr({
-		'src': 'assets/images/'+ $(this).attr("value")+'.png'
-	});	
+	$(this).css('transform','rotateY(180deg)');	
 	if(card1==null){
 		card1 = $(this);
 	}else{
@@ -81,14 +81,9 @@ const checkIfMatch = () => {
 			score.html(currentScore+=1);
 			correctGuess.push(card1.attr("value"));
 		}else{
-			card1.attr({
-				'src': 'assets/images/back.png'
-			});
-			card2.attr({
-				'src': 'assets/images/back.png'
-			});
+			card1.css('transform','rotateY(0)');	
+			card2.css('transform','rotateY(0)');
 		}
-
 	card1=null;
 	card2=null;
 	}
